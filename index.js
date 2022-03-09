@@ -2,12 +2,12 @@ const express = require('express');
 const engine = require('ejs-mate');
 const path = require('path');
 const { Sequelize } = require('sequelize');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
 require('dotenv');
 
-const userRoute = require('./route/user');
+const studentRoute = require('./route/student');
 
-const sequelize = new Sequelize('qlsv', 'root', null, {
+const sequelize = new Sequelize('qlsv-3', 'root', null, {
     host: 'localhost',
     dialect: 'mysql'
 })
@@ -27,8 +27,31 @@ app.set('views' , path.join(__dirname , 'views'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/', userRoute);
-app.listen('3000',(req,res)=>{
+app.use('/', studentRoute);
+
+
+app.listen('3001',(req,res)=>{
     console.log('ok')
 })
 //123
+// exports.addTutorial = (tagId, tutorialId) => {
+//   return Tag.findByPk(tagId)
+//     .then((tag) => {
+//       if (!tag) {
+//         console.log("Tag not found!");
+//         return null;
+//       }
+//       return Tutorial.findByPk(tutorialId).then((tutorial) => {
+//         if (!tutorial) {
+//           console.log("Tutorial not found!");
+//           return null;
+//         }
+//         tag.addTutorial(tutorial);
+//         console.log(`>> added Tutorial id=${tutorial.id} to Tag id=${tag.id}`);
+//         return tag;
+//       });
+//     })
+//     .catch((err) => {
+//       console.log(">> Error while adding Tutorial to Tag: ", err);
+//     });
+// };
