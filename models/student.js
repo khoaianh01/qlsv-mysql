@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Student.belongsToMany(models.Subjects,{through:"StudentSubject"});
+      Student.belongsToMany(models.Subjects,{through:"StudentSubjects",as:'Subjects',SforeignKey: 'id'});
       Student.belongsToMany(models.Lop,{through:"StudentLop"});
       Student.belongsTo(models.Khoa,{foreignKey:"id"});
 

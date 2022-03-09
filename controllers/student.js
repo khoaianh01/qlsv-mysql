@@ -33,17 +33,17 @@ module.exports.createStudent = async (req, res, next) => {
         const nameSubjects = req.body.nameS;
         // console.log('name',req.body.nameS)
         // const data = await db.Student.create({name,email});
-        const data1 = await db.Student.findOne({where:{name:'hai'}});
-        console.log(data1)
-        // const idSubjects =[];
-        // for(let i=0; i < nameSubjects.length;i++){
-        //     let subject = await db.Subjects.findOne({where :{nameS:nameSubjects[i]}});
-        // //   data.addSubjects(subject)
+        const data = await db.Student.findOne({where:{lastName:'hai'}});
+        console.log(data)
+        const idSubjects =[];
+        for(let i=0; i < nameSubjects.length;i++){
+            let subject = await db.Subjects.findOne({where :{nameS:nameSubjects[i]}});
+          data.addSubjects(subject)
             
-        // }
+        }
 
-    //    const subjects = await db.Student.findOne({where :{id:1}});
-    //   console.log(subjects)
+       const subjects = await db.Student.findOne({where :{id:1}});
+      console.log(subjects)
         // console.log(req.body)
         // exports.addTutorial = (,) => {
         //     return Student.findByPk(id)
