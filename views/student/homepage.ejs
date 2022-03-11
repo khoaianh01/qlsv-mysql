@@ -7,18 +7,28 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="/home">student</a>
+    <a href="/khoa">khoa</a>
+    <a href="/subject">subject</a>
     <% for(let i in data) { %>
 
         <p><%= data[i].name %></p>
         <p><%= data[i].email %></p>
-    
-        <!-- <a href="/edituser/<%= data[i].id %>">edituser</a>
-        <form action="/deleteuser/<%= data[i].id%>?_method=DELETE" method="POST">
-             <button>delete</button>
-        </form> -->
-      
+
+    <% for(let j=0;j<data[i].Subjects.length;j++){ %>
+       <p><%= data[i].Subjects[j].nameS %></p>
+       <p><%= data[i].Subjects[j].sotc %></p>
+   <% } %>
+    <% if(data[i].Khoa){%>
+     <p><%= data[i].Khoa.nameKhoa %></p>
+   <%}%>
+   <a href="/editstudent/<%= data[i].id%>">edit</a>
+   <form action="/delete/student/<%= data[i].id%>?_method=DELETE" method="POST">
+       <button >delete</button>
+   </form>
+
    <% } %>
     
-    <a href="/createuser">createuser</a>
+    <a href="/createstudent">createstudent</a>
 </body>
 </html>

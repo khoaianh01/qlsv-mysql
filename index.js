@@ -6,6 +6,8 @@ const methodOverride = require('method-override');
 require('dotenv');
 
 const studentRoute = require('./route/student');
+const subjectRoute = require('./route/subject');
+const khoaRoute = require('./route/khoa');
 
 const sequelize = new Sequelize('qlsv-3', 'root', null, {
     host: 'localhost',
@@ -27,9 +29,10 @@ app.set('views' , path.join(__dirname , 'views'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 
+
 app.use('/', studentRoute);
-
-
+app.use('/', subjectRoute);
+app.use('/',khoaRoute);
 app.listen('3001',(req,res)=>{
     console.log('ok')
 })

@@ -6,11 +6,11 @@ student_router
    .route('/createstudent')
    .get(homepage.getCreateStudent)
    .post(homepage.createStudent);
-//    student_router
-//    .route('/edistudent/:id')
-//    .get(homepage.getEditUser)
-//    .put(homepage.editUser);
-//    student_router
-//    .route('/deletstudent/:id')
-//    .delete(homepage.deleteUser);
+student_router
+   .route('/editstudent/:id')
+   .get(homepage.getEditStudent)
+   .put(homepage.putEditStudent);
+student_router
+   .route('/delete/student/:id')
+   .delete(homepage.deleteStudent);
 module.exports = student_router;
