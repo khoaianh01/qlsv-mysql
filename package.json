@@ -1,12 +1,12 @@
 {
-  "name": "qlsv-mysql",
+  "name": "abc",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "haianhle <khoaianh01@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "dot-env": "^0.0.1",

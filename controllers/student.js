@@ -4,7 +4,7 @@ const Student =require('../models/student');
 const Lop = require('../models/lop');
 const Subjects = require('../models/subjects');
 const Khoa = require('../models/khoa');
-const StudentSubject = require('../models/studentSubject');
+const StudentSubject = require('../models/studentSubjects');
 // const StudentSubject = require('../models/studentSubject')
 module.exports.getHomePage =  async (req, res, next) => {
     try {

@@ -9,7 +9,11 @@
 <body>
     <a href="/home">student</a>
     <a href="/khoa">khoa</a>
-    <a href="/subject">subject</a>
+    <a href="/subject">subject</a></br>
+
+    <a href="/sapxep/lastName">tìm tất cả tên học sinh bắt đầu bằng chữ n</a></br>
+    <a href="/sapxep/nameS">sắp xếp tên môn học theo bảng chữ cái</a></br>
+    <a href="/find/findstudent">tìm những học sinh học tất cả các môn</a></br>
     <% for(let i in data) { %>
 
         <p><%= data[i].lastName %></p>
@@ -30,5 +34,6 @@
    <% } %>
     
     <a href="/createstudent">createstudent</a>
+ 
 </body>
 </html>
